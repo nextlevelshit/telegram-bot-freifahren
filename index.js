@@ -1,6 +1,7 @@
 const Telegraf = require('telegraf')
-const config = require('./config')
-const bot = new Telegraf(config.telegram.token) 
+const config = require('./config.json')
+
+const bot = new Telegraf(config.token) 
 
 bot.start((ctx) => {
   const { id } = ctx.update.message.from
@@ -9,11 +10,11 @@ bot.start((ctx) => {
 })
 
 bot.on('text', (ctx) => {
-  const { id } = ctx.update.message.from
-  const { text } = ctx.message
-  const { sendMessage } = ctx.telegram
+  const { telegram, message, update } = ctx
+  const { id } = update.message.from
+  const { text } = message
 
-  sendMessage(config.telegram.chat.id, text).then(() => {
+  telegram.sendMessage(config.chat.id, text).then(() => {
     console.log(`[${id}] new message: ${ctx.message.text}`)
   })
 })
