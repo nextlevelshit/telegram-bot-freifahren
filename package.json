@@ -1,7 +1,7 @@
 {
   "name": "telegram-bot-freifahren",
   "version": "1.0.0",
-  "description": "Privacy bot for anonymous messaging in Telegram Channels",
+  "description": "Privacy-protecting Bot for anonymous messaging in Telegram Channels",
   "main": "index.js",
   "repository": "https://github.com/nextlevelshit/telegram-bot-freifahren.git",
   "author": "Michael Czechowski <mail@dailysh.it>",
